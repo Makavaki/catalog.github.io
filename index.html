@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт-визитка</title>
+    <!-- Подключаем шрифт Google Fonts для красоты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Подключаем Font Awesome для иконок (необязательно, но красиво) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafc;
+        }
+
+        /* Контейнер, чтобы центрировать контент */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+        .logo span {
+            color: #4f46e5;
+        }
+
+        .nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #4f46e5;
+        }
+
+        /* Герой (главный блок) */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #4f46e5;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Секция Услуги */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #2b2d42;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            color: #4f46e5;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #6b7280;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #2b2d42;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav a {
+                margin: 0 15px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Алексей<span>Смирнов</span></div>
+            <div class="nav">
+                <a href="#">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Создаю сайты, которые работают</h1>
+            <p>Помогаю бизнесу расти с помощью современных веб-решений. Индивидуальный подход и чистый код.</p>
+            <a href="#contact" class="btn">Связаться со мной</a>
+        </div>
+    </section>
+
+    <!-- БЛОК УСЛУГ -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Что я делаю</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Веб-разработка</h3>
+                    <p>Адаптивные сайты на HTML, CSS, JavaScript. Чистый и современный код.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Мобильная адаптация</h3>
+                    <p>Ваш сайт будет идеально смотреться на всех устройствах: от телефона до ПК.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>SEO-оптимизация</h3>
+                    <p>Базовая настройка для быстрого попадания в поисковые системы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК КОНТАКТОВ -->
+    <section id="contact" class="section" style="background-color: #f0f2f5;">
+        <div class="container">
+            <h2 class="section-title">Давайте работать вместе</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 18px; margin-bottom: 30px;">Готов обсудить ваш проект. Пишите на почту или звоните в Telegram.</p>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-envelope" style="color: #4f46e5; font-size: 24px;"></i>
+                        <span>alex@example.com</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fab fa-telegram" style="color: #4f46e5; font-size: 24px;"></i>
+                        <span>@alex_smirnov</span>
+                    </div>
+                </div>
+                <!-- Простая кнопка-заглушка -->
+                <div style="margin-top: 40px;">
+                    <a href="#" class="btn" style="background-color: #4f46e5; color: white;">Написать в Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Алексей Смирнов. Все права защищены.</p>
+            <p style="margin-top: 10px;">Сайт-визитка, созданный с ❤️</p>
+        </div>
+    </footer>
+
+</body>
+</html>
